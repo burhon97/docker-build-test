@@ -1,0 +1,38 @@
+version: "3.2"
+
+volumes:
+  redis_data:
+    external: true
+  test_redis_data:
+    external: true
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/data/redis
+    network_mode: bridge
+    # networks:
+    #   - test_network
+
+  redis-test:
+    image: test-redis:latest
+    container_name: redis-test
+    depends_on:
+      - redis
+    environment:
+
+      - KEY="mykey"
+      - VALUE="Hello World!"
+    volumes:
+      - test_redis_data:/data/redis-test
+    network_mode: bridge
+    # networks:
+    #   - test_network
+
+# networks:
+#   itn_network:
+#     external: true

@@ -1,0 +1,20 @@
+{
+  "name": "docker-build-test",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "_/index.js",
+  "scripts": {
+    "compile": "tsc -b -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "^4.6.10",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.3"
+  }
+}
