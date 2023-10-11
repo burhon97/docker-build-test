@@ -23,7 +23,7 @@ export class RedisClient {
   async add(key: string, value: any): Promise<void> {
     if (this.#redis) {
       await this.#redis.set(key, JSON.stringify(value));
-      console.log(`Saved data with key ${key}.`);
+      console.log(`Saved data with key "${key}".`);
     }
   }
 

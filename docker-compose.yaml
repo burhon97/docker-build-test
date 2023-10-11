@@ -14,9 +14,6 @@ services:
       - 6379:6379
     volumes:
       - redis_data:/data/redis
-    network_mode: bridge
-    # networks:
-    #   - test_network
 
   redis-test:
     image: test-redis:latest
@@ -29,10 +26,3 @@ services:
       - VALUE="Hello World!"
     volumes:
       - test_redis_data:/data/redis-test
-    network_mode: bridge
-    # networks:
-    #   - test_network
-
-# networks:
-#   itn_network:
-#     external: true
